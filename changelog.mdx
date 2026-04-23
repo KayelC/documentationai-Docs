@@ -1,0 +1,113 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in Kayel Calleja to stay informed about platform changes.
+---
+
+## Recent Updates
+
+<Callout kind="info">
+  Follow this changelog to discover new AI-powered features, workflow enhancements, bug fixes, and security improvements. Subscribe to notifications for instant alerts on major releases.
+</Callout>
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+  ## New Features
+
+  - **AI Code Creation**: Generate production-ready code snippets directly from natural language prompts using the new integrated AI models.
+  - **Workflow Automation**: Set up custom developer workflows with drag-and-drop actions for CI/CD pipelines.
+
+  ## Improvements
+
+  - Enhanced Codespaces performance with 40% faster environment startup times.
+  - Better issue tracking with AI-suggested labels and auto-triage.
+
+  ## Bug Fixes
+
+  - Resolved intermittent failures in secret protection scans.
+  - Fixed UI glitches in the MCP Registry dashboard.
+</Update>
+
+<Update label="2024-09-20" description="v1.1.0" tags={["bugfix", "security"]}>
+  ## Security Updates
+
+  - **Advanced Security**: Introduced proactive vulnerability scanning for dependencies in real-time.
+  - Secret protection now detects and alerts on more patterns, including API keys and tokens.
+
+  ## Bug Fixes
+
+  - Patched authentication flows to prevent token leakage in Codespaces.
+  - Fixed race conditions in Actions workflows during parallel executions.
+
+  ## Improvements
+
+  - Optimized Models management UI for faster prompt comparisons.
+</Update>
+
+<Update label="2024-08-10" description="v1.0.0" tags={["feature", "breaking"]}>
+  ## New Features
+
+  - **Initial Release**: Full platform launch with AI code generation, Codespaces, Issues, and Advanced Security.
+  - GitHub Copilot integration for seamless code suggestions.
+
+  ## Breaking Changes
+
+  - Updated API endpoints from `/v0/` to `/v1/` paths. See migration guide below.
+
+  ## Bug Fixes
+
+  - Stabilized core authentication service.
+</Update>
+
+## Deprecations and Migration Guides
+
+Certain legacy endpoints have been deprecated. Update your integrations promptly to avoid disruptions.
+
+<Expandable title="Migrate from v0 to v1 API" default-open="true">
+  Replace old endpoint calls with the new structure. Here's an example update:
+
+  <CodeGroup tabs="JavaScript,Python">
+  ````javascript
+  // Old v0 endpoint
+  const response = await fetch('https://api.example.com/v0/workflows');
+  
+  // New v1 endpoint
+  const response = await fetch('https://api.example.com/v1/workflows');
+  ````
+
+  ````python
+  # Old v0 endpoint
+  import requests
+  response = requests.get('https://api.example.com/v0/workflows')
+  
+  # New v1 endpoint
+  response = requests.get('https://api.example.com/v1/workflows')
+  ````
+  </CodeGroup>
+
+  Test your changes in a Codespaces environment before deploying.
+</Expandable>
+
+## Upcoming Roadmap
+
+Explore what's next for Kayel Calleja. These features are in active development.
+
+<Columns cols={2}>
+  <Card title="Enhanced AI Models" icon="zap" href="/features/ai-models">
+    Compare and fine-tune advanced AI models with custom datasets for better code generation.
+  </Card>
+
+  <Card title="Enterprise Security" icon="shield" href="/security/advanced">
+    Zero-trust architecture and compliance tools for large-scale deployments.
+  </Card>
+
+  <Card title="Collaborative Workflows" icon="users" href="/workflows/collaboration">
+    Real-time multiplayer editing in Codespaces with conflict resolution.
+  </Card>
+
+  <Card title="Marketplace Expansion" icon="package" href="/marketplace">
+    New integrations and MCP tools from the community.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Provide feedback on these roadmap items via the [Issues page](https://github.com/KayelC/Convergence/issues). Your input shapes future releases.
+</Callout>

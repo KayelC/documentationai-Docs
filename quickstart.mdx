@@ -1,0 +1,162 @@
+---
+title: Quickstart Guide
+description: Get up and running with Kayel Calleja in minutes by creating your first project and exploring basic functionality.
+---
+
+## Prerequisites
+
+Before starting, ensure you have the following:
+
+<Callout kind="info">
+
+- A web browser (Chrome, Firefox, or Safari recommended)
+- A GitHub account (for integration with repositories)
+- Basic familiarity with Git commands
+
+</Callout>
+
+No downloads required—Kayel Calleja is a fully web-based AI-powered developer platform.
+
+## Create Your Account and Sign In
+
+Follow these steps to set up your account.
+
+<Steps>
+  <Step title="Sign up" icon="user-plus">
+    Visit [kayelcalleja.com](https://kayelcalleja.com) and click **Sign up**.
+    
+    Fill in your email, create a password, and verify your email address.
+  </Step>
+  <Step title="Sign in" icon="log-in">
+    Return to the homepage and click **Sign in**.
+    
+    Enter your credentials to access the dashboard at `https://app.kayelcalleja.com`.
+  </Step>
+  <Step title="Connect GitHub" icon="github">
+    In the dashboard, navigate to **Settings > Integrations**.
+    
+    Authorize Kayel Calleja to access your GitHub repositories.
+  </Step>
+</Steps>
+
+## Set Up Your First Project
+
+Create and initialize your first repository.
+
+<Steps>
+  <Step title="Create a new repository" icon="plus">
+    From the dashboard, click **New Project**.
+    
+    Enter a name like `my-first-ai-app`, select **Public** visibility, and click **Create**.
+  </Step>
+  <Step title="AI-assisted code generation" icon="zap">
+    Open the repository and click **AI Code Creation > Generate**.
+    
+    Prompt: "Create a simple Node.js Express server with a `/hello` endpoint."
+    
+    Review and apply the generated code.
+  </Step>
+  <Step title="Make your first commit" icon="git-commit">
+    Click **Commit changes** and add a message: "Initial AI-generated Express server".
+    
+    Push to the main branch.
+  </Step>
+</Steps>
+
+## Run a Simple Workflow
+
+Automate your project with a basic workflow, similar to GitHub Actions.
+
+<Tabs>
+  <Tab title="JavaScript" icon="code">
+    Create `.kayel/workflows/hello.yml`:
+
+````yaml
+name: Hello Workflow
+on: [push]
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: node server.js
+````
+  </Tab>
+  <Tab title="Python" icon="python">
+    Create `.kayel/workflows/hello.yml`:
+
+````yaml
+name: Hello Workflow
+on: [push]
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python app.py
+````
+  </Tab>
+</Tabs>
+
+Commit the workflow file. View runs under **Workflows** tab—it triggers on every push.
+
+## Basic Navigation
+
+Familiarize yourself with key areas:
+
+<Columns cols={2}>
+  <Card title="Dashboard" icon="home" href="/introduction">
+    Overview of projects, recent activity, and AI suggestions.
+  </Card>
+  <Card title="AI Code Creation" icon="zap" href="#">
+    Generate, edit, and refine code using AI prompts.
+  </Card>
+  <Card title="Workflows" icon="play" href="#">
+    Automate deployments, tests, and CI/CD pipelines.
+  </Card>
+  <Card title="Issues & Collaboration" icon="users" href="#">
+    Track tasks, review code, and collaborate with teams.
+  </Card>
+</Columns>
+
+## Next Steps
+
+<Callout kind="tip">
+
+Explore advanced features:
+
+</Callout>
+
+<CodeGroup tabs="Node.js,Python">
+```javascript
+// server.js - Expand your Express app
+const express = require('express');
+const app = express();
+
+app.get('/hello', (req, res) => {
+  res.json({ message: 'Hello from Kayel Calleja!' });
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+```
+```python
+# app.py - Simple Flask app
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route('/hello')
+def hello():
+    return jsonify({"message": "Hello from Kayel Calleja!"})
+
+if __name__ == '__main__':
+    app.run(port=3000)
+```
+</CodeGroup>
+
+- Dive into [authentication](/authentication) for secure API access.
+- Check the [changelog](/changelog) for latest updates.
+
+You're now ready to build, collaborate, and innovate!
